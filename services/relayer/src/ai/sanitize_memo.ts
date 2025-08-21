@@ -1,0 +1,1 @@
+import { openai, MODELS } from './client.js'; export async function sanitizeMemo(memo:string){ if(!memo) return ''; const r=await openai.responses.create({model:MODELS.mini,input:[{role:'user',content:`Redact PII/URLs. Return only sanitized text.\n${memo}` }],temperature:0}); return (r.output_text||'').trim(); }

@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  node:
+    image: node:20
+    working_dir: /app
+    command: sh -lc "npm install && npm run node"
+    ports: ["8545:8545"]
+    volumes: [".:/app"]
+  deploy:
+    image: node:20
+    depends_on: [node]
+    working_dir: /app
+    command: sh -lc "wait-on tcp:node:8545 && npm run deploy:local"
+    volumes: [".:/app"]
+  relayer:
+    image: node:20
+    depends_on: [deploy]
+    working_dir: /app
+    command: sh -lc "cd services/relayer && npm install && npm run build && npm start"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    ports: ["8787:8787"]
+    volumes: [".:/app"]
+  web:
+    image: node:20
+    depends_on: [relayer]
+    working_dir: /app/apps/web
+    command: sh -lc "npm install && npm run dev -- --host 0.0.0.0"
+    ports: ["5173:5173"]
+    volumes: [".:/app"]

@@ -1,0 +1,27 @@
+{
+  "name": "entanglex",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "services/relayer",
+    "apps/web"
+  ],
+  "scripts": {
+    "build": "npx hardhat compile",
+    "node": "npx hardhat node",
+    "deploy:local": "TS_NODE_TRANSPILE_ONLY=1 ts-node scripts/deploy-and-write-env.ts",
+    "dev:relayer": "npm run start -w services/relayer",
+    "dev:web": "npm run dev -w apps/web",
+    "dev:all": "concurrently -k -n NODE,DEPLOY,RELAYER,WEB -c yellow,cyan,magenta,green \"npm:node\" \"wait-on tcp:127.0.0.1:8545 && npm run deploy:local\" \"wait-on tcp:127.0.0.1:8545 && npm:dev:relayer\" \"wait-on tcp:127.0.0.1:8787 && npm:dev:web\""
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.22.2",
+    "typescript": "^5.4.5",
+    "ts-node": "^10.9.1",
+    "@types/node": "^20.12.7",
+    "dotenv": "^16.4.5",
+    "concurrently": "^8.2.2",
+    "wait-on": "^7.2.0"
+  }
+}

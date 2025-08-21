@@ -1,0 +1,1 @@
+import { scoreIntent } from '../ai/risk_score.js'; export async function evaluateRisk(intent:any){ const r=await scoreIntent(intent); if(r.action==='block'||r.risk>=0.8) return {ok:false,level:'block',reasons:r.reasons}; if(r.action==='challenge'||r.risk>=0.5) return {ok:false,level:'challenge',reasons:r.reasons}; return {ok:true,level:'allow',reasons:[]}; }

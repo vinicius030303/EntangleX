@@ -1,0 +1,1 @@
+import OpenAI from 'openai'; export const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY }); export const MODELS={ main: process.env.OPENAI_MODEL_RESPONSES||'gpt-4.1', mini: process.env.OPENAI_MODEL_MINI||'gpt-4o-mini' };
