@@ -1,4 +1,4 @@
-# 🚀 EntangleX  
+#  EntangleX  
 
 **EntangleX** é um protocolo de próxima geração para pagamentos em blockchain.  
 Ele elimina as três maiores barreiras de adoção: **taxas altas**, **liquidações lentas** e **exposição de privacidade**.  
@@ -26,7 +26,7 @@ O cenário atual enfrenta desafios:
 
 ---
 
-## ✨ Visão Geral  
+##  Visão Geral  
 
 - **Gasless UX** – O usuário não paga gás; o sistema subsidia via Paymaster/tesouro DeFi.
 - **Entangled Ledger** – Saldos entre pares atualizados instantaneamente, como partículas entrelaçadas.
@@ -40,7 +40,7 @@ O cenário atual enfrenta desafios:
 
 ---
 
-## 🛠️ Tecnologias  
+## 🛠 Tecnologias  
 
 
 ![Solidity](https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white)
@@ -59,7 +59,7 @@ O cenário atual enfrenta desafios:
 
 ---
 
-## 📂 Estrutura  
+##  Estrutura  
 
 ```
 entanglex/
@@ -105,7 +105,7 @@ entanglex/
 
 ---
 
-## ⚙️ Funcionalidades MVP  
+## ⚙ Funcionalidades MVP  
 
 - **EntangledLedger** – pares, depósitos, ajustes, saques.  
 - **Relayer com IA** – intents → risco → auto-settle ou challenge.  
@@ -131,7 +131,7 @@ entanglex/
 - Helpers para stealth addresses
 ---
 
-## 🔒 Segurança & Privacidade  
+##  Segurança & Privacidade  
 
 - **Gasless Paymaster (stub)** – subsidia taxas de rede com tesouro DeFi.  
 - **Stealth Mode v1** – derivação de endereço stealth com `viewTag`.  
@@ -141,7 +141,7 @@ entanglex/
 
 ---
 
-## 🛤 Roadmap  
+##  Roadmap  
 
 - [x] MVP Ledger + Relayer IA  
 - [x] Frontend Demo  
@@ -153,7 +153,7 @@ entanglex/
 
 ---
 
-## 🔧 Como Rodar  
+##  Como Rodar  
 
 ```bash
 # Instalar dependências
@@ -169,7 +169,7 @@ npm run dev:all
 
 ---
 
-## 📜 Licença  
+##  Licença  
 
 MIT – Livre para pesquisa e experimentação.  
 
