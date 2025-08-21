@@ -169,9 +169,8 @@ npm run dev:all
 
 ---
 
-##  Licença  
-
-MIT – Livre para pesquisa e experimentação.  
+## 📜 Licença
+MIT License © 2025  
 
 ---
 
